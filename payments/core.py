@@ -47,8 +47,8 @@ def get_overridden_url():
     """
     Returns the overridden host and protocol
     """
-    protocol = 'https' if PAYMENT_USES_SSL_OVERRIDED else 'http'
-    domain = PAYMENT_HOST_OVERRIDED
+    protocol = 'https' if PAYMENT_USES_SSL_OVERRIDDEN else 'http'
+    domain = PAYMENT_HOST_OVERRIDDEN
     return '%s://%s' % (protocol, domain)
 
 class BasicProvider(object):
@@ -94,12 +94,12 @@ class BasicProvider(object):
         '''
         raise NotImplementedError()
 
-    def get_return_url(self, payment, extra_data=None, override_domain=False):
+    def get_return_url(self, payment, extra_data=None, overridden_domain=False):
         payment_link = payment.get_process_url()
 
-        # Use overrided domain instead of BASE_URL
-        if override_domain:
-            url = get_overrided_url()
+        # Use overridden domain instead of BASE_URL
+        if overridden_domain:
+            url = get_overridden_url()
         else:
             url = get_base_url()
 
