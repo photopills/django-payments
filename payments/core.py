@@ -43,9 +43,9 @@ def get_base_url():
         domain = PAYMENT_HOST
     return '%s://%s' % (protocol, domain)
 
-def get_overrided_url():
+def get_overridden_url():
     """
-    Returns the overrided host and protocol
+    Returns the overridden host and protocol
     """
     protocol = 'https' if PAYMENT_USES_SSL_OVERRIDED else 'http'
     domain = PAYMENT_HOST_OVERRIDED
