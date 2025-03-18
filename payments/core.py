@@ -22,9 +22,8 @@ if not PAYMENT_HOST:
 PAYMENT_USES_SSL = getattr(settings, 'PAYMENT_USES_SSL', not settings.DEBUG)
 
 # To override the internal payment callback (not the OK/KO final redirect)
-PAYMENT_HOST_OVERRIDED = getattr(settings, 'PAYMENT_HOST_OVERRIDED', PAYMENT_HOST)
-PAYMENT_USES_SSL_OVERRIDED = getattr(settings, 'PAYMENT_USES_SSL_OVERRIDED', PAYMENT_USES_SSL)
-
+PAYMENT_HOST_OVERRIDDEN = getattr(settings, 'PAYMENT_HOST_OVERRIDDEN', PAYMENT_HOST)
+PAYMENT_USES_SSL_OVERRIDDEN = getattr(settings, 'PAYMENT_USES_SSL_OVERRIDDEN', PAYMENT_USES_SSL)
 
 def get_base_url():
     """
